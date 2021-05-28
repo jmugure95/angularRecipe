@@ -9,9 +9,12 @@ import {Recipe} from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
 
-  constructor() { }
+  constructor(private recipesServices) { }
 
   ngOnInit(): void {
+  }
+  onAddToShoppingLIst(): any{
+
   }
 
 }
