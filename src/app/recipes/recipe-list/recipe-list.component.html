@@ -10,6 +10,7 @@
       <app-recipe-item
         *ngFor="let recipeEl of recipes"
         [recipe]="recipeEl"
+        (click)="madness(recipeEl)"
       ></app-recipe-item>
     </div>
   </div>

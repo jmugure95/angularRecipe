@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipe} from './recipe.model';
 import {RecipesServices} from './recipes.services';
+import {Ingredients} from '../shared/ingredients.model';
 
 @Component({
   selector: 'app-recipes',
@@ -20,5 +21,4 @@ export class RecipesComponent implements OnInit {
       }
     );
   }
-
 }

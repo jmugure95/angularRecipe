@@ -1,20 +1,26 @@
-import { EventEmitter } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Recipe} from './recipe.model';
 import {Ingredients} from '../shared/ingredients.model';
+import {ShoppingListService} from '../shopping-list/shopping-list.service';
+
+@Injectable()
 
 export class RecipesServices{
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe(
+       1,
       'Blueberry acai bowl',
       'A healthy blueberry acai bowl for your heart',
       'https://www.jessicagavin.com/wp-content/uploads/2020/01/acai-bowl-10-1200.jpg',
-      [
+
+  [
         new Ingredients('Blueberries', 10),
         new Ingredients('milk', 1)
       ]
     ),
     new Recipe(
+      2,
       'Green Matcha',
       'A green smoothie for glowing skin',
       'https://joyfoodsunshine.com/wp-content/uploads/2019/07/green-smoothie-recipe-2.jpg',
@@ -25,8 +31,18 @@ export class RecipesServices{
     )
   ];
 
+  constructor(private slService: ShoppingListService) {}
+
   getRecipes(): any{
     // return a duplicate of the recipes array
     return this.recipes.slice();
+  }
+
+  getRecipeDetail(recipeId: number): any{
+    return this.recipes.find(specificRecipe => specificRecipe.id === recipeId);
+  }
+
+  addIngredientsToShoppingList(ingredient: Ingredients[]): any{
+    this.slService.addIngredients(ingredient);
   }
 }
