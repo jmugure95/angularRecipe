@@ -12,13 +12,14 @@ import {Ingredients} from '../shared/ingredients.model';
 export class RecipesComponent implements OnInit {
   selectedRecipe: Recipe;
 
-  constructor(private recipeService: RecipesServices) {  }
+  constructor() {  }
+  // constructor(private recipeService: RecipesServices) {  }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-      this.selectedRecipe = recipe;
-      }
-    );
+    // this.recipeService.recipeSelected.subscribe(
+    //   (recipe: Recipe) => {
+    //   this.selectedRecipe = recipe;
+    //   }
+    // );
   }
 }
