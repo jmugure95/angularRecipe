@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'recipe';
   @Input() loadedFeature = 'recipes';
 
-  onNavigate(feature: string): any{
-    this.loadedFeature = feature;
-  }
+  // onNavigate(feature: string): any{
+  //   this.loadedFeature = feature;
+  // }
 
 }
